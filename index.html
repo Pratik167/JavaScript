@@ -100,8 +100,8 @@
         let button=document.getElementById("button");
         button.addEventListener("click",playMusic);
         const counter=document.getElementById("counter");
+        let count=1;
         function playMusic(){
-            let count=1;
             let audio= new Audio("1.mp3");
                 audio.play();
             counter.textContent=count;
@@ -109,9 +109,12 @@
         }
         
         const reset=document.getElementById("reset");
-        reset.addEventListener("click",function(){
+        reset.addEventListener("mousedown",function(){
             count=0;
             counter.textContent=count;
+        })
+        reset.addEventListener("mouseup",function(){
+            count=1;
         })
         const speed=document.getElementById("speed");
         speed.addEventListener("click",meme)
